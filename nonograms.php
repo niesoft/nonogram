@@ -5,6 +5,8 @@
 // 	private int $limit = 254 - Порог определения черного пикселя, от 0 до 254
 // )
 $game = new Nonogram("test.png");
+
+print_r($game->list);
 // draw(
 // 	string $filename, Куда сохранить кросворд
 // 	int $cellsize = 28, Размер одной ячейки сетки в px
