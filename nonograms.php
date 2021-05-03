@@ -43,6 +43,16 @@ Class Nonogram {
 		imagedestroy($this->img);
 	}
 
+// Изменение основных цветов:
+	public function set_color(string $type, int $r = 0, int $g = 0, int $b = 0) : bool
+	{
+		if (isset($this->color[$type])) {
+			$this->color[$type] = imagecolorallocate($this->img, $r, $g, $b);
+			return true;
+		}
+		return false;
+	}
+
 // Получем координаты клеток по оси X
 	private function get_gorizontal() : array
 	{
