@@ -4,15 +4,15 @@
 // 	string $filename, - Файл для преобразования в кроссворд
 // 	private int $limit = 254 - Порог определения черного пикселя, от 0 до 254
 // )
-$game = new Nonogram("test.png");
+// $game = new Nonogram("test.png");
 
-print_r($game->list);
+// print_r($game->list);
 // draw(
 // 	string $filename, Куда сохранить кросворд
 // 	int $cellsize = 28, Размер одной ячейки сетки в px
 // 	bool $test = false, Сохранить с закрашенными ячейками
 // )
-$game->draw("result.png", 24, true);
+// $game->draw("result.png", 24, true);
 
 // http://niesoft.ru
 
@@ -152,6 +152,7 @@ Class Nonogram {
 			'width' => $this->size['width'] * $cellsize + floor($this->size['width'] / 5),
 			'height' => $maximumcell * $cellsize
 		];
+
 		$img = imagecreatetruecolor ($size['width'], $size['height']);
 		imagefill($img, 0, 0, $this->color['background']);
 		imagesetthickness($img, 1);
@@ -235,7 +236,7 @@ Class Nonogram {
 			$cnt = count($value);
 			$max = ($cnt > $max) ? $cnt : $max;
 		}
-		return $max;
+		return $max > 0 ? $max : 1;
 	}
 
 // Сокращение кода для функций get_vertical и get_gorizontal
